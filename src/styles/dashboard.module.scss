@@ -1,0 +1,72 @@
+.wrapper {
+   width: 100%;
+
+   table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 5px;
+      border-radius: 5px;
+      overflow: hidden;
+      .title {
+         color: rgb(153, 153, 153);
+         font-size: 11px;
+         font-weight: 600;
+         line-height: 13px;
+         letter-spacing: 0%;
+         text-align: left;
+         text-transform: uppercase;
+
+         th {
+            padding: 10px;
+            p {
+               cursor: pointer;
+
+               width: 0;
+            }
+         }
+      }
+   }
+   .tBody {
+      border-radius: 3px;
+   }
+   .threadBody {
+      .results {
+         border-radius: 3px 0px 0px 3px;
+         border-left: 4px solid rgb(225, 65, 101);
+      }
+      .finalize {
+         border-radius: 3px 0px 0px 3px;
+         border-left: 4px solid rgb(134, 134, 255);
+      }
+      td {
+         padding: 15px;
+         color: rgb(71, 71, 71);
+
+         font-size: 13px;
+         font-weight: 500;
+         line-height: 15px;
+         letter-spacing: 0%;
+         text-align: left;
+         background: rgb(255, 255, 255);
+      }
+   }
+}
+
+.btn {
+   padding: 8px 16px;
+   border-radius: 6px;
+   font-size: 14px;
+   font-weight: 500;
+   border: none;
+   cursor: pointer;
+}
+
+.btnResults {
+   background-color: #10b981;
+   color: white;
+}
+
+.btnFinalize {
+   background-color: #6b7280;
+   color: white;
+}
