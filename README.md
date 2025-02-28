@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# Interview task for frontend developers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a test task to asses your skills in React.js, HTML and CSS.
 
-Currently, two official plugins are available:
+### Technical requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- To complete this task, you can use Vite/Parcel/Rsbuild.
+- You are not allowed to use any external libraries except for `node-sass`, `axios`, `classnames`, `react-router-dom`, `prop-types`;
+- You can use `prop-types` library if you don't use **`TypeScript`**.
+- Demonstrate use of **`React hooks`**.
+- You can use **`css`** or **`scss`** of your choice.
 
-## Expanding the ESLint configuration
+### Functionality requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The app is a dashboard page which used to display a list of created A/B tests ([Figma](https://www.figma.com/file/PFdFpIajQbuGibIbEYnE3l/Interview-task-for-frontend-developers)).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+![Mockup](./resources/dashboard-mockup.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- The table is filled with the data that is requested from the JSON file using the API in [this repository](https://development.kameleoon.net/oivanov/frontend-interview-task-api). You need to clone the project to your local machine and run it.
+- When a user hovers over a table row it should be highlighted as shown in the mockup.
+- Sites in the corresponding column must be displayed without the **`http`** or **`https`** protocols and **`www`** prefix.
+- A user should be able to filter by item name. If the item exists we hide other
+records and show only items that were found in the list. If no records are found there should
+be a message with the corresponding text and a reset button (see [Figma](https://www.figma.com/file/PFdFpIajQbuGibIbEYnE3l/Interview-task-for-frontend-developers)).
+- A user should be able to sort (**`ASC`**, **`DESC`**) by clicking on the titles of the columns:
+  - **`name`**, **`type`** and **`site`** should be sorted in alphabetical order
+  - **`status`** should be sorted in:
+    - **`ASC`**: Online, Paused, Stopped, Draft
+    - **`DESC`**: Draft, Stopped, Paused, Online
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Additional tasks
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Using the `react-router-dom` library, implement routing between three pages: **`dashboard`**, **`results`**, and **`finalize`**. And don't forget to load the necessary data for each page.
+- When a user clicks on the **`Results`** or **`Finalize`** button on dashboard page, you should redirect to URLs **`/results/[testId]`** and **`/finalize/[testId]`** accordingly, without reloading the browser window.
+
+It will be a plus if you:
+- will use TypeScript to complete the task
+- write tests
+- if a user can interact with the interface using the keyboard.
+
+
+### The result of executing
+
+The solution to this task is recommended to be posted on any public git service of your choice.
+
+Good luck!
